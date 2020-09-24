@@ -54,7 +54,7 @@ class HomeController extends Controller
 
         // $this->hasDupes($request, array_unique($arr, SORT_REGULAR));
 
-        $response = $this->postClient($arr);
+        $response = $this->postClient(array_unique($arr, SORT_REGULAR));
 
         return $response->body();
     }
