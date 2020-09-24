@@ -13,5 +13,12 @@ trait HttpClient
         $response = Http::post($this->url, $arr);
 
         return $response;
+    
+    }
+    public function getClient()
+    {
+        $response = Http::get($this->url);
+
+        return $response;
     }
 }

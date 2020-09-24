@@ -83,12 +83,13 @@
             <hr>
 
             <label for="email"><b>Digit</b></label>
-            <select id="digit" name="digit">
-                <option disabled selected>Please Select Digit</option>
-                <option value="50000">50,000</option>
+            <input type="text" id="digit" name="digit" />
+            <!-- <select id="digit" name="digit">
+                <!-- <option disabled selected>Please Select Digit</option>
+                <option value="50000">50,000</option> -->
                 <!-- <option value="100000">100,000</option>
                 <option value="150000">150,000</option> -->
-            </select>
+            <!-- </select>  -->
 
             <button type="button" id="start" class="submitbtn">Submit</button>
 

@@ -42,34 +42,14 @@ class HomeController extends Controller
         $arr = [];
         
         for ($i = 1; $i <= $request->digit; $i++) {
-            // char length too small to be unique
             $str = Str::random(6);
             
             $arr[] = ['unique_code' => $str];
-
-            // if(!in_array($str, $arr)) {
-            //     $arr[] = ['unique_code' => $str];
-            // }
         }
 
-        // $this->hasDupes($request, array_unique($arr, SORT_REGULAR));
-
-        $response = $this->postClient(array_unique($arr, SORT_REGULAR));
+        $response = $this->postClient($arr);
 
         return $response->body();
-    }
-
-    public function hasDupes(Request $request, $arr)
-    {
-        $arrCnt = $request->digit-count($arr);
-        
-        if($arrCnt != 0) {
-            for($i = 1; $i <= $arrCnt; $i++) {
-                $str = Str::random(6);
-
-                $arr[] = ['unique_code' => $str];                
-            }
-        }
     }
 
     /**
